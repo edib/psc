@@ -1,0 +1,18 @@
+[pgbouncer]
+listen_addr = *
+listen_port = 5432
+auth_type = hba
+auth_hba_file = /etc/pgbouncer/pg_hba.conf
+auth_file = /etc/pgbouncer/userlist.txt
+auth_query = SELECT usename, passwd FROM public.kullanici_bul($1)
+unix_socket_dir=/var/run/postgresql
+logfile = /var/log/postgresql/pgbouncer.log
+pidfile = /var/run/postgresql/pgbouncer.pid
+admin_users=postgres
+
+
+[databases]
+#adb = host=m2 port=5432 dbname=adb auth_user={auth_user}
+#adb_ro = host=127.0.0.1 port=55432 dbname=adb auth_user={auth_user}
+
+

@@ -1,0 +1,23 @@
+[global]
+{if repo1_host == hostname}
+repo1-path={repo1_path}
+repo1-host-user=postgres
+repo1-retention-full=2
+{end}
+{if repo2_host == hostname}
+repo2-path={repo2_path}
+repo2-host-user=postgres
+repo2-retention-full=2
+{end}
+
+archive-async=y
+log-level-file=detail
+[global:archive-get]
+process-max=8
+[global:archive-push]
+process-max=8
+[{cls}]
+pg1-path={master_pg_data_dir}
+pg1-port={pgport}
+pg1-host={master}
+pg1-host-user=postgres

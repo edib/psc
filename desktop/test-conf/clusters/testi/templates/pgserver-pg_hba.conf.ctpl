@@ -1,0 +1,13 @@
+# TYPE  DATABASE        USER            ADDRESS                 METHOD
+
+local   all             all                                     peer
+host    all             all             127.0.0.1/32            scram-sha-256
+host    all             all             ::1/128                 scram-sha-256
+local   replication     all                                     peer
+
+{for pip in pgserver_ips}host    replication    {replica_user} {pip}/32 md5
+{end}
+
+{for pip in gate_ips}host    all    {auth_user} {pip}/32 password
+host    all    all {pip}/32 md5
+{end}

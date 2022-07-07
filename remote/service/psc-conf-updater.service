@@ -1,0 +1,14 @@
+[Unit]
+Description=psc-conf-updater
+
+[Service]
+WorkingDirectory=/tmp
+ExecStart=/usr/bin/java -Dlog4j.configurationFile=/var/lib/psc/service/psc-conf-updater-log4j2.properties -cp /var/lib/psc/lib/psc-jar-with-dependencies.jar psc.config.ConfigUpdater PRM_CLUSTER null watch
+User=postgres
+Type=simple
+Restart=on-failure
+RestartSec=600
+
+
+[Install]
+WantedBy=multi-user.target

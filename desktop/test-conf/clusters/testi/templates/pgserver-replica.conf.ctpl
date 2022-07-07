@@ -1,0 +1,32 @@
+listen_addresses = '*'
+
+primary_conninfo = 'user={replica_user} password=''{replica_user_pwd}'' channel_binding=prefer host={master} port={pgport} sslmode=prefer sslcompression=0 sslsni=1 ssl_min_protocol_version=TLSv1.2 gssencmode=prefer krbsrvname=postgres target_session_attrs=any application_name={rep_slot}'
+primary_slot_name = '{rep_slot}'
+restore_command= 'pgbackrest --stanza={cls} archive-get %f %p'
+recovery_target_timeline = 'latest'
+
+port = {pgport}
+session_preload_libraries=auto_explain
+auto_explain.log_min_duration=2s
+work_mem=28MB
+shared_buffers=30MB
+max_wal_size=16GB
+max_parallel_workers=8
+logging_collector = 'on'
+log_filename = 'postgresql-%Y-%m-%d_%H_%M_%S.l'
+log_directory = '{pg_log_dir}'
+log_destination = 'csvlog'
+log_line_prefix = '' 
+log_duration = on
+log_rotation_age = 1h
+log_rotation_size = 0
+log_checkpoints = 'on'
+log_connections = 'on'
+log_disconnections = 'on'
+log_lock_waits = 'on'
+log_statement = 'all'
+log_error_verbosity = 'verbose' 
+log_file_mode = 0640
+log_parameter_max_length=10000
+#archive_mode = on
+#archive_command = 'pgbackrest --stanza={cls} archive-push %p'

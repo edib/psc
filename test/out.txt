@@ -1,0 +1,426 @@
+Cluster is testi
+testi
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+B
+B
+
+>>>>>>>>>>>>>>master found:m2
+Cluster is testi
+testi
+Cluster is testi
+testi
+[93mpostgres@m2->>>>>>>>>>Creating log directory
+Cluster is testi
+testi
+>>>>>>>>>>Creating pgpass file 5432=
+<<<<<
+[94mpostgres@m2->>>>>>>>>>>Creating cluster testi
+Creating new PostgreSQL cluster 14/testi ...
+/usr/lib/postgresql/14/bin/initdb -D /data/testi_14 --auth-local peer --auth-host scram-sha-256 --no-instructions
+The files belonging to this database system will be owned by user "postgres".
+This user must also own the server process.
+
+The database cluster will be initialized with locales
+  COLLATE:  en_US.UTF-8
+  CTYPE:    en_US.UTF-8
+  MESSAGES: en_US.UTF-8
+  MONETARY: tr_TR.UTF-8
+  NUMERIC:  tr_TR.UTF-8
+  TIME:     tr_TR.UTF-8
+The default database encoding has accordingly been set to "UTF8".
+The default text search configuration will be set to "english".
+
+Data page checksums are disabled.
+
+fixing permissions on existing directory /data/testi_14 ... ok
+creating subdirectories ... ok
+selecting dynamic shared memory implementation ... posix
+selecting default max_connections ... 100
+selecting default shared_buffers ... 128MB
+selecting default time zone ... Etc/UTC
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+syncing data to disk ... ok
+Ver Cluster Port Status Owner    Data directory Log file
+14  testi   5432 down   postgres /data/testi_14 /log/testi_14/postgresql-%Y.%m.%d.%H.log
+Cluster is testi
+testi
+>>>>>>>>>Generating master postgresql.auto.conf
+Cluster is testi
+testi
+<<<<<
+Cluster is testi
+testi
+>>>>>>>>>>Update hba testi
+add to cluster host m2
+add to cluster host m3
+add to cluster host m4
+add to cluster host b1
+add to cluster host b2
+add to cluster host p1
+add to cluster host p2
+>>>>> hba file is getting symbolic /etc/postgresql/14/testi/pg_hba.conf of /etc/postgresql/14/testi/pg_hba_run.conf. Local hba is /etc/postgresql/14/testi/pg_hba_local.conf
+<<<<<
+Cluster is testi
+testi
+>>>>>>>>>>Pgbackrest client configuration started
+<<<<<
+<<<<<
+[95mpostgres@m2->>>>>>>>>>>Starting cluster testi
+[96mpostgres@m2->>>>>>>>>>>Creating pool auth user
+CREATE ROLE
+[91mpostgres@m2->>>>>>>>>>>Creating replication user
+CREATE ROLE
+[92mpostgres@m2->>>>>>>>>>>Creating dbs
+[93mpostgres@m2->>>>>>>>>>>Creating db adb
+CREATE DATABASE
+[94mpostgres@m2->>>>>>>>>>>Creating auth query
+CREATE FUNCTION
+[95mpostgres@m2->>>>>>>>>>>Grant access rights
+GRANT
+[96mpostgres@m2->>>>>>>>>>>Creating db bdb
+CREATE DATABASE
+[91mpostgres@m2->>>>>>>>>>>Creating auth query
+CREATE FUNCTION
+[92mpostgres@m2->>>>>>>>>>>Grant access rights
+GRANT
+Cluster is testi
+testi
+[93mpostgres@m2->>>>>>>>>>>Patroni conf: m2
+Cluster is testi
+testi
+>>>>>>>>>>Update hba testi
+add to cluster host m2
+add to cluster host m3
+add to cluster host m4
+add to cluster host b1
+add to cluster host b2
+add to cluster host p1
+add to cluster host p2
+<<<<<
+<<<<<
+Cluster is testi
+testi
+[93mpostgres@b1->>>>>>>>>>>>Pgbackrest backup configuration @b1
+<<<<<
+Cluster is testi
+testi
+[93mpostgres@b2->>>>>>>>>>>>Pgbackrest backup configuration @b2
+<<<<<
+Cluster is testi
+testi
+Cluster is testi
+testi
+Cluster is testi
+testi
+>>>>>>>>>>Update hba testi
+add to cluster host m2
+add to cluster host m3
+add to cluster host m4
+add to cluster host b1
+add to cluster host b2
+add to cluster host p1
+add to cluster host p2
+<<<<<
+<<<<<
+Cluster is testi
+testi
+>>>>>>>>>Creating log directory
+Cluster is testi
+testi
+>>>>>>>>>>Creating pgpass file 5432=
+<<<<<
+>>>>>>>>>Creating cluster
+Creating new PostgreSQL cluster 14/testi ...
+/usr/lib/postgresql/14/bin/initdb -D /data/testi_14 --auth-local peer --auth-host scram-sha-256 --no-instructions
+The files belonging to this database system will be owned by user "postgres".
+This user must also own the server process.
+
+The database cluster will be initialized with locales
+  COLLATE:  en_US.UTF-8
+  CTYPE:    en_US.UTF-8
+  MESSAGES: en_US.UTF-8
+  MONETARY: tr_TR.UTF-8
+  NUMERIC:  tr_TR.UTF-8
+  TIME:     tr_TR.UTF-8
+The default database encoding has accordingly been set to "UTF8".
+The default text search configuration will be set to "english".
+
+Data page checksums are disabled.
+
+fixing permissions on existing directory /data/testi_14 ... ok
+creating subdirectories ... ok
+selecting dynamic shared memory implementation ... posix
+selecting default max_connections ... 100
+selecting default shared_buffers ... 128MB
+selecting default time zone ... Etc/UTC
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+syncing data to disk ... ok
+Ver Cluster Port Status Owner    Data directory Log file
+14  testi   5432 down   postgres /data/testi_14 /log/testi_14/postgresql-%Y.%m.%d.%H.log
+Cluster is not running.
+>>>>>>>>>Deleting cluster data /data/testi_14/*
+Cluster is testi
+testi
+>>>>>>>>>Generating replica postgresql.auto.conf
+Cluster is testi
+testi
+<<<<<
+Cluster is testi
+testi
+>>>>>>>>>>Update hba testi
+add to cluster host m2
+add to cluster host m3
+add to cluster host m4
+add to cluster host b1
+add to cluster host b2
+add to cluster host p1
+add to cluster host p2
+>>>>> hba file is getting symbolic /etc/postgresql/14/testi/pg_hba.conf of /etc/postgresql/14/testi/pg_hba_run.conf. Local hba is /etc/postgresql/14/testi/pg_hba_local.conf
+<<<<<
+Cluster is testi
+testi
+>>>>>>>>>>Pgbackrest client configuration started
+<<<<<
+<<<<<
+<<<<<
+Success
+<<<<<
+Cluster is testi
+testi
+Cluster is testi
+testi
+[93mpostgres@m3->>>>>>>>>>>Patroni conf: m3
+Cluster is testi
+testi
+>>>>>>>>>>Update hba testi
+add to cluster host m2
+add to cluster host m3
+add to cluster host m4
+add to cluster host b1
+add to cluster host b2
+add to cluster host p1
+add to cluster host p2
+<<<<<
+<<<<<
+[93mpostgres@m3->>>>>>>>>>>postgres_cluster_created_pgserver m3 leader is m2
+Cluster is testi
+testi
+>>>>>>>>>Creating log directory
+Cluster is testi
+testi
+>>>>>>>>>>Creating pgpass file 5432=
+<<<<<
+>>>>>>>>>Creating cluster
+Creating new PostgreSQL cluster 14/testi ...
+/usr/lib/postgresql/14/bin/initdb -D /data/testi_14 --auth-local peer --auth-host scram-sha-256 --no-instructions
+The files belonging to this database system will be owned by user "postgres".
+This user must also own the server process.
+
+The database cluster will be initialized with locales
+  COLLATE:  en_US.UTF-8
+  CTYPE:    en_US.UTF-8
+  MESSAGES: en_US.UTF-8
+  MONETARY: tr_TR.UTF-8
+  NUMERIC:  tr_TR.UTF-8
+  TIME:     tr_TR.UTF-8
+The default database encoding has accordingly been set to "UTF8".
+The default text search configuration will be set to "english".
+
+Data page checksums are disabled.
+
+fixing permissions on existing directory /data/testi_14 ... ok
+creating subdirectories ... ok
+selecting dynamic shared memory implementation ... posix
+selecting default max_connections ... 100
+selecting default shared_buffers ... 128MB
+selecting default time zone ... Etc/UTC
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+syncing data to disk ... ok
+Ver Cluster Port Status Owner    Data directory Log file
+14  testi   5432 down   postgres /data/testi_14 /log/testi_14/postgresql-%Y.%m.%d.%H.log
+Cluster is not running.
+>>>>>>>>>Deleting cluster data /data/testi_14/*
+>>>>>>>>>Taking basebackup in host:m3 -D /data/testi_14 --create-slot --slot=m3 -c fast -X stream -Fp -h m2 -U rep 
+Cluster is testi
+testi
+>>>>>>>>>Generating replica postgresql.auto.conf
+Cluster is testi
+testi
+<<<<<
+Cluster is testi
+testi
+>>>>>>>>>>Update hba testi
+add to cluster host m2
+add to cluster host m3
+add to cluster host m4
+add to cluster host b1
+add to cluster host b2
+add to cluster host p1
+add to cluster host p2
+>>>>> hba file is getting symbolic /etc/postgresql/14/testi/pg_hba.conf of /etc/postgresql/14/testi/pg_hba_run.conf. Local hba is /etc/postgresql/14/testi/pg_hba_local.conf
+<<<<<
+Cluster is testi
+testi
+>>>>>>>>>>Pgbackrest client configuration started
+<<<<<
+<<<<<
+<<<<<
+[94mpostgres@m3->>>>>>>>>>>Host: m3 cluster_created: Check nested replications: 
+Cluster is testi
+testi
+Cluster is testi
+testi
+[93mpostgres@m4->>>>>>>>>>>Patroni conf: m4
+Cluster is testi
+testi
+>>>>>>>>>>Update hba testi
+add to cluster host m2
+add to cluster host m3
+add to cluster host m4
+add to cluster host b1
+add to cluster host b2
+add to cluster host p1
+add to cluster host p2
+<<<<<
+<<<<<
+[93mpostgres@m4->>>>>>>>>>>postgres_cluster_created_pgserver m4 leader is m3
+Cluster is testi
+testi
+>>>>>>>>>Creating log directory
+Cluster is testi
+testi
+>>>>>>>>>>Creating pgpass file 5432=
+<<<<<
+>>>>>>>>>Creating cluster
+Creating new PostgreSQL cluster 14/testi ...
+/usr/lib/postgresql/14/bin/initdb -D /data/testi_14 --auth-local peer --auth-host scram-sha-256 --no-instructions
+The files belonging to this database system will be owned by user "postgres".
+This user must also own the server process.
+
+The database cluster will be initialized with locales
+  COLLATE:  en_US.UTF-8
+  CTYPE:    en_US.UTF-8
+  MESSAGES: en_US.UTF-8
+  MONETARY: tr_TR.UTF-8
+  NUMERIC:  tr_TR.UTF-8
+  TIME:     tr_TR.UTF-8
+The default database encoding has accordingly been set to "UTF8".
+The default text search configuration will be set to "english".
+
+Data page checksums are disabled.
+
+fixing permissions on existing directory /data/testi_14 ... ok
+creating subdirectories ... ok
+selecting dynamic shared memory implementation ... posix
+selecting default max_connections ... 100
+selecting default shared_buffers ... 128MB
+selecting default time zone ... Etc/UTC
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+syncing data to disk ... ok
+Ver Cluster Port Status Owner    Data directory Log file
+14  testi   5432 down   postgres /data/testi_14 /log/testi_14/postgresql-%Y.%m.%d.%H.log
+Cluster is not running.
+>>>>>>>>>Deleting cluster data /data/testi_14/*
+>>>>>>>>>Taking basebackup in host:m4 -D /data/testi_14 --create-slot --slot=m4 -c fast -X stream -Fp -h m3 -U rep 
+Cluster is testi
+testi
+>>>>>>>>>Generating replica postgresql.auto.conf
+Cluster is testi
+testi
+<<<<<
+Cluster is testi
+testi
+>>>>>>>>>>Update hba testi
+add to cluster host m2
+add to cluster host m3
+add to cluster host m4
+add to cluster host b1
+add to cluster host b2
+add to cluster host p1
+add to cluster host p2
+>>>>> hba file is getting symbolic /etc/postgresql/14/testi/pg_hba.conf of /etc/postgresql/14/testi/pg_hba_run.conf. Local hba is /etc/postgresql/14/testi/pg_hba_local.conf
+<<<<<
+Cluster is testi
+testi
+>>>>>>>>>>Pgbackrest client configuration started
+<<<<<
+<<<<<
+<<<<<
+[94mpostgres@m4->>>>>>>>>>>Host: m4 cluster_created: Check nested replications: 
+Success
+<<<<<
+Success
+<<<<<
+Cluster is testi
+testi
+Cluster is testi
+testi
+[93mpostgres@m4->>>>>>>>>>>Patroni conf: m4
+Cluster is testi
+testi
+>>>>>>>>>>Update hba testi
+add to cluster host m2
+add to cluster host m3
+add to cluster host m4
+add to cluster host b1
+add to cluster host b2
+add to cluster host p1
+add to cluster host p2
+<<<<<
+<<<<<
+This pgserver m4 do not follow m2
+<<<<<
+Cluster is testi
+testi
+>>>>>>>>>>Update hba testi
+<<<<<
+Cluster is testi
+testi
+>>>>>>>>>>Update hba testi
+<<<<<
+Cluster is testi
+testi
+[93mpostgres@b1->>>> Sleep for 5 seconds
+[94mpostgres@b1->>>>>>>>>>>Pgbackrest server create stanza b1
+[95mpostgres@b1->>>>>>>>>>>Pgbackrest server backup
+Success
+<<<<<
+Cluster is testi
+testi
+[93mpostgres@b2->>>> Sleep for 5 seconds
+[94mpostgres@b2->>>>>>>>>>>Pgbackrest server create stanza b2
+[95mpostgres@b2->>>>>>>>>>>Pgbackrest server backup
+Success
+<<<<<
+Cluster is testi
+testi
+[93mpostgres@m2->>>>>>>>>>>Restarting patroni @m2
+Success
+<<<<<
+Cluster is testi
+testi
+Success
+<<<<<
+Cluster is testi
+testi
+[93mpostgres@m3->>>>>>>>>>>Restarting patroni @m3
+Success
+<<<<<
+Cluster is testi
+testi
+[93mpostgres@m4->>>>>>>>>>>Restarting patroni @m4
+Success
+<<<<<
+Success
+<<<<<
+<<<<<
+Success
+<<<<<

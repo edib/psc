@@ -1,0 +1,61 @@
+
+bootstrap = <<SCRIPT
+	sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
+	systemctl reload sshd
+  	useradd --shell=/bin/bash --home=/home/ybavci -m ybavci --groups sudo -p $(perl -e 'print crypt($ARGV[0], "password")' 'q')
+  	mkdir -p /data 
+  	mkdir -p /log
+  	chmod 777 /data
+  	chmod 777 /log
+  	echo "ybavci ALL=(ALL) NOPASSWD: ALL\" > /etc/sudoers.d/ybavci
+  	chmod 0440 /etc/sudoers.d/ybavci
+  	sed -i "/$(hostname)/d" /etc/hosts
+SCRIPT
+	
+Vagrant.configure("2") do |config|
+#  config.vm.box = "debian/bullseye64"
+#  config.vm.box_version = "11.20210829.1"
+  config.vm.box = "ubuntu/focal64"
+  config.vm.provision "shell", inline: "#{bootstrap}", privileged: true
+
+
+  config.ssh.insert_key = false
+
+ # config.vm.synced_folder "/home/ybavci/workspace/pg_scripted_cluster","/opt/psc"
+
+  config.vm.provider :virtualbox do |v|
+    v.memory=1048
+    v.cpus=1
+  end
+
+  config.vm.define "m1" do |m|
+    m.vm.hostname="m1"
+    m.vm.network :private_network, ip:"192.168.60.4"
+  end
+  config.vm.define "m2" do |m|
+    m.vm.hostname="m2"
+    m.vm.network :private_network, ip:"192.168.60.5"
+  end
+  config.vm.define "m3" do |m|
+    m.vm.hostname="m3"
+    m.vm.network :private_network, ip:"192.168.60.6"
+  end
+  config.vm.define "b1" do |m|
+    m.vm.hostname="b1"
+    m.vm.network :private_network, ip:"192.168.60.8"
+  end
+  config.vm.define "b2" do |m|
+    m.vm.hostname="b2"
+    m.vm.network :private_network, ip:"192.168.60.9"
+  end
+ config.vm.define "p1" do |m|
+    m.vm.hostname="p1"
+    m.vm.network :private_network, ip:"192.168.60.10"
+  end
+  config.vm.define "p2" do |m|
+    m.vm.hostname="p2"
+    m.vm.network :private_network, ip:"192.168.60.11"
+  end
+
+end
+

@@ -1,0 +1,50 @@
+---
+scope: {cls}
+name: {hostname}
+namespace: "/psc"
+
+restapi:
+    listen: {ip}:8008
+    connect_address: {ip}:8008
+
+etcd:
+    hosts:
+{for pip in etcd_hosts}        - {pip}:2379
+{end}
+
+postgresql:
+    listen: "*:{pgport}"
+    connect_address: {ip}:5432
+    use_unix_socket: true
+    data_dir: {pg_data_dir}
+    bin_dir: /usr/lib/postgresql/{pgver}/bin
+    config_dir: /etc/postgresql/{pgver}/{cls}
+    pgpass: /var/lib/postgresql/.pgpass_patroni
+    authentication:
+        replication:
+            username: {replica_user}
+            password: {replica_user_pwd}
+        superuser:
+            username: postgres
+            password: "94949"
+    parameters:
+        unix_socket_directories: /var/run/postgresql
+        stats_temp_directory: /var/lib/postgresql/pgsql_stats_tmp
+    remove_data_directory_on_rewind_failure: false
+    remove_data_directory_on_diverged_timelines: false
+    create_replica_methods:
+        - pgbackrest
+        - basebackup
+    pgbackrest:
+        command: /usr/bin/pgbackrest --stanza={cls} --delta restore
+        keep_data: true
+        no_params: true
+    basebackup:
+        max-rate: '100M'
+        checkpoint: 'fast'
+    recovery_conf:
+        restore_command: pgbackrest --stanza={cls} archive-get %f %p
+watchdog:
+    mode: required
+    device: /dev/watchdog
+    safety_margin: 5
