@@ -65,14 +65,17 @@ allsiteswp=($(find -L /opt/psc-conf/  -mindepth 3 -maxdepth 3 -type d -path '*/s
 
 
 for it in ${allclusterswp[@]}; do
+	#echo "Add cluster $it"
 	source ${it}/cluster.sh
 done
 
-for it in $(allhostswp[@]); do
+for it in ${allhostswp[@]}; do
+	#echo "Add host $it"
 	source ${it}/host.sh
 done
 
-for it in $(allsiteswp); do
+for it in ${allsiteswp}; do
+	#echo "Add site $it"
 	source ${it}/site.sh
 done
 

@@ -6,7 +6,7 @@ export cls=$1
 
 
 for hst in ${hosts[@]};do
-	echo ">>>> Copying my public key to $hst"
+	echo ">>>> Copying my public key to $hst ${host_ip[$hst]}"
 	ssh-copy-id ${host_ip[$hst]}
 	ssh ${host_ip[$hst]} "echo 'geldim'; exit;"
 	echo ">>>>>>> Done $hst"

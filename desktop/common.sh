@@ -34,7 +34,10 @@ if [ -z $cls ]; then
 	echo "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
 	exit 1
 fi
-source /opt/psc/desktop/conf/desktop_env.sh
+
+if [  -f "/opt/psc-conf/desktop_env.sh" ]; then
+	source /opt/psc-conf/desktop_env.sh
+fi
 
 #host_friends=(${cluster_hosts[$cls]})
 hosts=(${cluster_hosts[$cls]})

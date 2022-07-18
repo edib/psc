@@ -2,6 +2,7 @@
 /opt/psc/desktop/test/clear.sh
 i_nopasswd.sh testi
 
+add_hostname.sh testi
 sudo vi /etc/hosts
 
 sudo update-alternatives --config editor
