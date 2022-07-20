@@ -29,6 +29,7 @@ declare -A cluster_postgres_pass
 declare -A cluster_master
 declare -A cluster_ro
 declare -A cluster_follows
+declare -A cluster_path
 
 declare -A cluster_logrepo_host
 declare -A cluster_logrepo_dir
@@ -39,6 +40,7 @@ declare -A host_ip
 declare -A host_role
 declare -A host_available_pg_versions
 declare -A host_site
+declare -A host_path
 
 
 declare -A host_path_data
@@ -66,11 +68,19 @@ allsiteswp=($(find -L /opt/psc-conf/  -mindepth 3 -maxdepth 3 -type d -path '*/s
 
 for it in ${allclusterswp[@]}; do
 	#echo "Add cluster $it"
+	h= $(basename $it)
+	cluster_path[$h]=$it
+
 	source ${it}/cluster.sh
+	
 done
 
 for it in ${allhostswp[@]}; do
 	#echo "Add host $it"
+	h= $(basename $it)
+	
+	host_path[$h]=$it
+	
 	source ${it}/host.sh
 done
 

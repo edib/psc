@@ -6,10 +6,10 @@ export cls=$1
 
 
 for hst in ${hosts[@]};do
-	cecho "Checking packaging $PSC/desktop/conf/hosts/${hst}/packaging.sh"
-	if [ -f "$PSC/desktop/conf/hosts/${hst}/packaging.sh" ]; then
+	cecho "Checking packaging ${host_path[$hst]}/packaging.sh"
+	if [ -f "${host_path[$hst]}/packaging.sh" ]; then
 		echo "custom packaging exists"
-		scp $PSC/desktop/conf/hosts/${hst}/packaging.sh @"$hst:/tmp/packaging.sh"
+		scp "${host_path[$hst]}/packaging.sh" @"$hst:/tmp/packaging.sh"
 		ssh ${host_ip[$hst]} "sudo -S bash /tmp/packaging.sh"
 	fi
 	ssh ${host_ip[$hst]} "sudo -S apt update"

@@ -43,7 +43,7 @@ done
 
 cecho ">>>>>>>>>Setup  etcd store at $etcdhost"
 ssh ${host_ip[$etcdhost]} "sudo -S rm -rf /tmp/psc-templates"
-scp -r -q "/opt/psc/desktop/conf/clusters/${cls}/templates" "${host_ip[$etcdhost]}:/tmp/psc-templates"
+scp -r -q "${cluster_path[$cls]}/templates" "${host_ip[$etcdhost]}:/tmp/psc-templates"
 ssh ${host_ip[$etcdhost]} "etcdctl rm --recursive /psc/${cls}/psc"
 ssh ${host_ip[$etcdhost]} "etcdctl mkdir /psc/${cls}/psc"
 ssh ${host_ip[$etcdhost]} "etcdctl mkdir /psc/${cls}/psc/templates"
