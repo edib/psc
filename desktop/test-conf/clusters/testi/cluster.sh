@@ -1,15 +1,12 @@
 
 
-##PCSSTART
 cluster_master[testi]=m2
 cluster_follows[testi-m1]=m2
-cluster_follows[testi-m3]=m2
+#cluster_follows[testi-m3]=m2
 
-##PCSEND
 
-##PCSHOSTSSTART
-cluster_hosts[testi]="m1 m2 m3 b1 b2 p1 p2"
-##PCSHOSTSEND
+#cluster_hosts[testi]="m1 m2 m3 b1 b2 p1 p2"
+cluster_hosts[testi]="m1 m2 b1 b2 p1"
 
 #cluster_ro[testi]=m3
 
@@ -38,5 +35,5 @@ cluster_pgbackrest_repo2[testi]=b2
 
 cluster_haproxy_weight[testi-m1]=1
 cluster_haproxy_weight[testi-m2]=2
-cluster_haproxy_weight[testi-m3]=3
+#cluster_haproxy_weight[testi-m3]=3
 
