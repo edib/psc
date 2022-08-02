@@ -70,9 +70,9 @@ for hst in ${hosts[@]};do
 	
 	cecho ">>>>>>>>>postgres user can reload pgbouncer and haproxy services $hst"
 	if [[ "${host_os[$hst]}" == "ubuntu" ]]; then
-		evalstr='echo "postgres ALL=(ALL) NOPASSWD: /usr/sbin/modprobe, /usr/bin/chown, /bin/systemctl reload pgbouncer, /bin/systemctl reload haproxy, /bin/systemctl reload patroni, /bin/systemctl restart patroni, /bin/systemctl stop patroni, /bin/systemctl restart etcd" > /etc/sudoers.d/psc'
+		evalstr='echo "postgres ALL=(ALL) NOPASSWD: /usr/sbin/modprobe, /usr/bin/chown, /bin/systemctl reload pgbouncer, /bin/systemctl restart pgbouncer, /bin/systemctl reload haproxy, /bin/systemctl reload patroni, /bin/systemctl restart patroni, /bin/systemctl stop patroni, /bin/systemctl restart etcd" > /etc/sudoers.d/psc'
 	else
-		evalstr='echo "postgres ALL=(ALL) NOPASSWD: /sbin/modprobe, /bin/chown, /bin/systemctl reload pgbouncer, /bin/systemctl reload haproxy, /bin/systemctl reload patroni, /bin/systemctl restart patroni, /bin/systemctl stop patroni, /bin/systemctl restart etcd" > /etc/sudoers.d/psc'
+		evalstr='echo "postgres ALL=(ALL) NOPASSWD: /sbin/modprobe, /bin/chown, /bin/systemctl reload pgbouncer, /bin/systemctl restart pgbouncer, /bin/systemctl reload haproxy, /bin/systemctl reload patroni, /bin/systemctl restart patroni, /bin/systemctl stop patroni, /bin/systemctl restart etcd" > /etc/sudoers.d/psc'
 	fi
 
 	ssh ${host_ip[$hst]}  "sudo -S -s -u root eval '$evalstr'" 

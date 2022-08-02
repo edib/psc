@@ -10,3 +10,4 @@ cecho ">>>>>>>>>>>Pgbouncer conf configuration $hostname"
 /var/lib/psc/scripts/postgres/render_template.sh $cls pgbouncer-pg_hba.conf.ctpl "/etc/pgbouncer/pg_hba.conf"
 /var/lib/psc/scripts/postgres/render_template.sh $cls haproxy.cfg.ctpl "/etc/haproxy/haproxy.cfg"
 
+sudo -S systemctl restart pgbouncer
