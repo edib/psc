@@ -1,3 +1,2 @@
-local	pgbouncer 	postgres	trust
-{auth_user}  {auth_user_pwd} ""
+"{auth_user}"  "{auth_user_pwd}" ""
 
