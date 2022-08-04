@@ -8,3 +8,5 @@ export cls=$1
 /opt/psc/desktop/bootstrap/install_pgserver_roles.sh $cls
 /opt/psc/desktop/bootstrap/install_pgbackrest.sh $cls
 /opt/psc/desktop/bootstrap/install_pgbouncer.sh $cls
+/opt/psc/desktop/bootstrap/install_elastic.sh $cls
+/opt/psc/desktop/bootstrap/install_kibana.sh $cls

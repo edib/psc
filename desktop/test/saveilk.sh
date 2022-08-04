@@ -8,5 +8,6 @@ vagrant snapshot save --force "b1" ilk-b1
 vagrant snapshot save --force "b2" ilk-b2
 vagrant snapshot save --force "p1" ilk-p1
 vagrant snapshot save --force "p2" ilk-p2
+vagrant snapshot save --force "e1" ilk-e1
 
 

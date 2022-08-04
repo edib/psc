@@ -10,6 +10,7 @@ ssh-keygen -R "b1"
 ssh-keygen -R "b2"
 ssh-keygen -R "p1"
 ssh-keygen -R "p2"
+ssh-keygen -R "e1"
 
 
 ssh-keygen -R "192.168.60.4"
@@ -20,3 +21,4 @@ ssh-keygen -R "192.168.60.8"
 ssh-keygen -R "192.168.60.9"
 ssh-keygen -R "192.168.60.10"
 ssh-keygen -R "192.168.60.11"
+ssh-keygen -R "192.168.60.12"
