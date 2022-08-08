@@ -140,6 +140,9 @@ for hst in ${hosts[@]};do
 				
 		done
 		
+		cecho "Installing pglogway to pgserver roles..."
+		/opt/psc/install_pglogway $cls $hst elastic $elastic_pwd
+		
 		
 		echo "Done"
 	fi

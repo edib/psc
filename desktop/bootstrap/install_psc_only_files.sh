@@ -54,6 +54,13 @@ for hst in ${hosts[@]};do
 	ssh ${host_ip[$hst]} "sudo -S systemctl enable psc-conf-updater.service "
 	ssh ${host_ip[$hst]} "sudo -S systemctl restart psc-conf-updater.service "
 	
+	echo ">>>psc-config-updater service: config start"
+	ssh ${host_ip[$hst]} "sudo -S sed -i s/PRM_CLUSTER/${cls}/g /var/lib/psc/service/psc-conf-updater.service"
+	ssh ${host_ip[$hst]} "sudo -S ln -fs /var/lib/psc/service/psc-conf-updater.service  /lib/systemd/system"
+	ssh ${host_ip[$hst]} "sudo -S systemctl daemon-reload"
+	ssh ${host_ip[$hst]} "sudo -S systemctl enable psc-conf-updater.service "
+	ssh ${host_ip[$hst]} "sudo -S systemctl restart psc-conf-updater.service "
+	
 done
 
 echo "success"
