@@ -9,7 +9,8 @@ vagrant  halt "m3"
 vagrant  halt "b1" 
 vagrant  halt "b2" 
 vagrant  halt "p1" 
-vagrant  halt "p2" 
+vagrant  halt "p2"
+vagrant  halt "e1"  
 
 
 
@@ -21,5 +22,6 @@ vagrant snapshot restore "b1" os-b1
 vagrant snapshot restore "b2" os-b2
 vagrant snapshot restore "p1" os-p1
 vagrant snapshot restore "p2" os-p2
+vagrant snapshot restore "e1" os-e1
 
 

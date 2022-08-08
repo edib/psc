@@ -30,3 +30,6 @@ install_psc.sh testi
 create_cluster.sh testi
 
 
+
+
+beats_system'in yetkileri yeterli gelmedi

@@ -1,5 +1,6 @@
 
 
+
 cluster_master[testi]=m2
 cluster_follows[testi-m1]=m2
 #cluster_follows[testi-m3]=m2
@@ -27,3 +28,5 @@ cluster_haproxy_weight[testi-m1]=1
 cluster_haproxy_weight[testi-m2]=2
 #cluster_haproxy_weight[testi-m3]=3
 
+cluster_elastic[testi]=e1
+cluster_elastic_psc_user[testi]="pscpwd"
