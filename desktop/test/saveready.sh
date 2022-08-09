@@ -8,5 +8,6 @@ vagrant snapshot save --force "b1" ready-b1
 vagrant snapshot save --force "b2" ready-b2
 vagrant snapshot save --force "p1" ready-p1
 vagrant snapshot save --force "p2" ready-p2
+vagrant snapshot save --force "e1" ready-e1
 
 

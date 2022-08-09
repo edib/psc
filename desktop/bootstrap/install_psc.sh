@@ -114,12 +114,6 @@ for hst in ${hosts[@]};do
 	ssh ${host_ip[$hst]} "sudo -S sed -i s/PRM_CLUSTER/${cls}/g /var/lib/psc/service/psc-conf-updater.service"
 	ssh ${host_ip[$hst]} "sudo -S ln -fs /var/lib/psc/service/psc-conf-updater.service  /lib/systemd/system"
 	
-	echo ">>>pglogway service"
-	ssh ${host_ip[$hst]} "sudo -S ln -fs /var/lib/psc/service/pglogway.service  /lib/systemd/system"
-	ssh ${host_ip[$hst]} "sudo -S ln -fs /var/lib/psc/service/pglogway.ini /etc/pglogway.ini"
-	ssh ${host_ip[$hst]} "sudo -S ln -fs /var/lib/psc/service/pglogway-log4j2.properties /etc/pglogway-log4j2.properties"
-	
-	
 	ssh ${host_ip[$hst]} "sudo -S systemctl daemon-reload"
 	ssh ${host_ip[$hst]} "sudo -S systemctl enable psc-conf-updater.service "
 	ssh ${host_ip[$hst]} "sudo -S systemctl restart psc-conf-updater.service "
